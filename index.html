@@ -377,6 +377,11 @@ tfoot td{background:var(--paper);font-weight:700}
 .step .d{margin-top:9px;font-family:var(--latin);font-size:27px;line-height:1;color:var(--river)}
 .step .d small{font-size:.44em;letter-spacing:.1em;margin-left:5px;color:var(--ink-2)}
 .step p{margin-top:9px;font-size:13.5px;font-weight:600;letter-spacing:-.025em}
+.step.hot{background:var(--river)}
+.step.hot b{color:var(--sun)}
+.step.hot .d{color:#fff}
+.step.hot .d small{color:#9DB3AD}
+.step.hot p{color:#E4EFEB}
 
 .notice{margin-top:clamp(34px,5vw,52px);background:var(--paper);border-left:3px solid var(--prugio);padding:26px}
 .notice h3{font-size:15px;font-weight:800;letter-spacing:-.02em}
@@ -495,6 +500,12 @@ input::placeholder,textarea::placeholder{color:#A4AFAB}
 .pw-row{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.055);border:1px solid rgba(227,168,104,.24);border-radius:11px;padding:13px 14px}
 .pw-row b{flex:0 0 74px;font-family:var(--latin);font-size:19px;color:var(--sun-hi);line-height:1.15}
 .pw-row span{font-size:14px;font-weight:700;color:#E2EDEA;letter-spacing:-.03em}
+.pw-when{margin-top:20px;padding:20px 16px;text-align:center;border:1px solid rgba(227,168,104,.4);border-radius:12px;background:rgba(255,255,255,.05)}
+.pw-when b{display:block;font-family:var(--latin);font-size:clamp(28px,8vw,36px);font-weight:500;color:var(--sun-hi);letter-spacing:.04em;line-height:1.1}
+.pw-when span{display:block;margin-top:8px;font-size:14.5px;font-weight:700;color:#E2EDEA;letter-spacing:-.02em}
+.pw-note{margin-top:14px}
+.pw-note li{position:relative;padding-left:12px;margin-top:7px;font-size:11.5px;line-height:1.65;color:#8FAAA3;word-break:keep-all}
+.pw-note li::before{content:"※";position:absolute;left:0;top:0;font-size:10px}
 .pw-tip{margin-top:16px;display:flex;align-items:center;gap:9px;background:var(--sun);border-radius:11px;padding:13px 14px;font-size:14.5px;font-weight:800;color:var(--river);letter-spacing:-.03em}
 .pw-tip svg{flex:0 0 18px}
 .pw-btns{margin-top:11px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
@@ -916,11 +927,20 @@ input::placeholder,textarea::placeholder{color:#A4AFAB}
         <div class="step"><b>Papers</b><p class="d num">08.22<small>SAT</small></p><p>서류접수 ~ 08.30</p></div>
         <div class="step"><b>Contract</b><p class="d num">09.01<small>TUE</small></p><p>정당계약 ~ 09.04</p></div>
       </div>
+      <div class="steps reveal" style="margin-top:1px">
+        <div class="step hot" style="grid-column:1/-1">
+          <b>First Come, First Served</b>
+          <p class="d num">2026. 10. 03<small>SAT 14:00</small></p>
+          <p>선착순 분양 — 잔여물건 공급 개시</p>
+        </div>
+      </div>
       <div class="notice reveal">
-        <h3>현재 단계 안내</h3>
+        <h3>현재 단계 — 선착순 분양</h3>
         <ul>
-          <li>위 일정은 <b>2026년 최초 입주자모집공고 기준</b>이며, 정당계약까지 진행된 일정입니다.</li>
-          <li>잔여 세대 여부와 추가 공급 일정은 수시로 달라집니다. <b>1555-1087</b>로 확인해 주시거나 방문예약을 남겨주시면 현재 기준으로 안내드립니다.</li>
+          <li>정당계약이 종료되어 <b>2026년 10월 3일(토) 오후 2시부터 선착순 분양</b>으로 전환됩니다.</li>
+          <li>본 아파트 공급은 <b>입주 전 전매 가능단지</b>이나, 전매알선 및 확정을 약속하지 않습니다.</li>
+          <li>잔여물건 진행 시 금품 프리미엄 요청을 하지 않으며, 공급 시 별도의 금품 지원을 하지 않습니다.</li>
+          <li>잔여 동·호수는 선착순 진행에 따라 수시로 달라집니다. <b>1555-1087</b>로 확인해 주시거나 방문예약을 남겨주시면 현재 기준으로 안내드립니다.</li>
         </ul>
       </div>
 
@@ -1167,17 +1187,21 @@ input::placeholder,textarea::placeholder{color:#A4AFAB}
   <div class="pw-in" id="pwIn" tabindex="-1">
     <div class="pw-body">
       <button class="pw-x" type="button" id="pwX" aria-label="팝업 닫기">&#10005;</button>
-      <p class="pw-eb">Hangang Prugio</p>
-      <h2 class="pw-h" id="pwH">김포 한강변 <em>2,432세대</em><br>푸르지오 대단지</h2>
-      <div class="pw-list">
-        <div class="pw-row"><b>38F</b><span>지하 4층 ~ 지상 38층 12개 동</span></div>
-        <div class="pw-row"><b>84~180</b><span>전용 84·106·122·180㎡ PH</span></div>
-        <div class="pw-row"><b>2031.01</b><span>입주 예정</span></div>
+      <p class="pw-eb" style="padding-inline:34px">Hangang Prugio</p>
+      <h2 class="pw-h" id="pwH"><em>선착순</em><br>일정 안내</h2>
+      <div class="pw-when">
+        <b class="num">2026. 10. 03</b>
+        <span>토요일 오후 2시</span>
       </div>
       <p class="pw-tip">
         <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M10 1a9 9 0 100 18 9 9 0 000-18zm4.3 6.6l-5 6a1 1 0 01-1.5.06L5.4 11.3a1 1 0 111.4-1.4l1.6 1.6 4.3-5.2a1 1 0 011.6 1.3z"/></svg>
-        잔여세대·분양조건은 전화로 바로 확인
+        전용 84·106·122·180㎡ PH · 2031년 1월 입주 예정
       </p>
+      <ul class="pw-note">
+        <li>본 아파트 공급은 입주 전 전매 가능단지이나, 전매알선 및 확정을 약속하지 않습니다.</li>
+        <li>잔여물건 진행 시 금품 프리미엄 요청을 하지 않습니다.</li>
+        <li>잔여물건 공급 시 별도의 금품 지원을 하지 않습니다.</li>
+      </ul>
       <div class="pw-btns">
         <a class="pw-b pw-b1" href="tel:1555-1087" id="pwTel">전화상담</a>
         <button class="pw-b pw-b2" type="button" id="pwBook">방문예약</button>
