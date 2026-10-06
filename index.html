@@ -1541,6 +1541,12 @@ input::placeholder,textarea::placeholder{color:#A4AFAB}
           TossPixel('2382883081870412525').lead({ event_id: evId, lead_type:'Consultation', custom_param1:'한강푸르지오리버프론트' });
         }
       }catch(_px){}
+      /* 네이버 전환(lead): 공통키가 들어 있을 때만 */
+      try{
+        if (window.NAVER_WA && window.wcs && typeof wcs.trans === 'function'){
+          var _conv = {}; _conv.type = 'lead'; wcs.trans(_conv);
+        }
+      }catch(_nv){}
       form.reset();
       $('#privBox').classList.remove('open');
       msg.className = 'form-msg ok';
@@ -1587,6 +1593,19 @@ input::placeholder,textarea::placeholder{color:#A4AFAB}
 })();
 </script>
 
+<!-- 네이버 공통 스크립트: 공통키(s_…)를 NAVER_WA에 넣기 전에는 아무것도 보내지 않음 -->
+<script>window.NAVER_WA = '';</script>
+<script src="//wcs.naver.net/wcslog.js"></script>
+<script>
+  try{
+    if (window.NAVER_WA && window.wcs){
+      if (!window.wcs_add) window.wcs_add = {};
+      wcs_add['wa'] = window.NAVER_WA;
+      wcs.inflow();
+      if (typeof wcs_do === 'function') wcs_do();
+    }
+  }catch(_nv){}
+</script>
 <script>window.ADGUARD_SITE = '한강푸르지오리버프론트';</script>
 <script src="./adguard.js" defer></script>
 </body>
