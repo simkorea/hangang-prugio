@@ -1546,10 +1546,18 @@ input::placeholder,textarea::placeholder{color:#A4AFAB}
     if (note)  lines.push(note);
     var message = lines.join('\n');
 
+    /* 토스 광고 주소(utm_source=toss)로 들어온 방문자는 접수 구분을 따로 남긴다.
+       새로고침·이동 후에도 유지되게 sessionStorage에 한 번 저장해 둔다. */
+    var fromToss = false;
+    try{
+      if (/[?&]utm_source=toss(&|$)/.test(location.search)) sessionStorage.setItem('src_toss','1');
+      fromToss = sessionStorage.getItem('src_toss') === '1';
+    }catch(_ss){ fromToss = /[?&]utm_source=toss(&|$)/.test(location.search); }
+
     btn.disabled = true; btn.textContent = '접수 중…';
     fetch('/api/consult', {
       method:'POST', headers:{ 'Content-Type':'application/json' },
-      body: JSON.stringify({ name:name, phone:ph, unit_type:unit || null, message: message.trim() || null })
+      body: JSON.stringify({ name:name, phone:ph, unit_type:unit || null, message: message.trim() || null, channel: fromToss ? 'toss' : null })
     })
     .then(function(r){ if (!r.ok) throw new Error('fail'); return r.json(); })
     .then(function(){

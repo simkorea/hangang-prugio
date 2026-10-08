@@ -5,8 +5,12 @@ module.exports = async (req, res) => {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).end();
 
-  const { name, phone, unit_type, message } = req.body || {};
+  const { name, phone, unit_type, message, channel } = req.body || {};
   if (!name || !phone) return res.status(400).json({ error: '이름과 연락처는 필수입니다.' });
+
+  /* 광고 유입 구분. 허용 값만 받는다(임의 문자열이 source 로 들어가지 않게). */
+  const fromToss = channel === 'toss';
+  const SOURCE = fromToss ? '토스-한강푸르지오리버프론트' : '한강푸르지오리버프론트';
 
   /* ── 1. Supabase 저장 ── */
   const SUPABASE_URL = 'https://tctilpuhknxucrlnhlky.supabase.co';
@@ -25,7 +29,7 @@ module.exports = async (req, res) => {
       phone,
       unit_type: unit_type || null,
       message: message || null,
-      source: '한강푸르지오리버프론트'
+      source: SOURCE
     })
   });
 
@@ -50,7 +54,7 @@ module.exports = async (req, res) => {
       body: JSON.stringify({
         from: 'onboarding@resend.dev',
         to: ['xinkorea@naver.com'],
-        subject: `[한강 푸르지오 리버프론트] 새 방문예약 — ${name}`,
+        subject: `[한강 푸르지오 리버프론트${fromToss ? ' · 토스 광고' : ''}] 새 방문예약 — ${name}`,
         html: `
           <div style="font-family:'Apple SD Gothic Neo',sans-serif;max-width:520px;margin:0 auto;">
             <h2 style="color:#07302C;border-bottom:2px solid #C8A96A;padding-bottom:10px;margin-bottom:16px;">
