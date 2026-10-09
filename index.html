@@ -59,10 +59,7 @@
   "offers": {
     "@type": "Offer",
     "availability": "https://schema.org/LimitedAvailability",
-    "priceCurrency": "KRW",
-    "lowPrice": 643000000,
-    "highPrice": 999000000,
-    "description": "전용 84㎡ 6억 4,300만원대 ~ 전용 180㎡ 펜트하우스 9억 9,900만원대. 층·타입별 차등 책정이며 발코니 확장 및 추가선택품목은 미포함입니다."
+    "description": "분양가격은 동·층·향·타입별 차등 책정으로 별도 문의 바랍니다. 대표번호 1555-1087."
   }
 }
 </script>
@@ -345,6 +342,10 @@ address{font-style:normal}
 .uspec .price{margin:0 22px 22px;padding:14px 16px;background:var(--paper);border-left:3px solid var(--sun)}
 .uspec .price span{display:block;font-size:12px;color:var(--ink-2)}
 .uspec .price b{display:block;margin-top:4px;font-family:var(--latin);font-size:21px;font-weight:500;color:var(--river)}
+.uspec .price-ask{color:inherit;border-bottom:1px solid var(--sun);transition:color .25s var(--ease)}
+.uspec .price-ask:hover{color:var(--prugio)}
+.uspec .price-ask:active{color:var(--sun-dp)}
+.uspec .price-ask:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
 
 /* ══════════ 12. 표 ══════════ */
 .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -562,7 +563,7 @@ input::placeholder,textarea::placeholder{color:#A4AFAB}
     {"@type":"Question","name":"총 세대수와 규모는 어떻게 되나요?","acceptedAnswer":{"@type":"Answer","text":"지하 4층부터 지상 38층까지 12개 동, 총 2,432세대입니다. 이 중 특별공급이 1,228세대, 일반공급이 1,204세대입니다."}},
     {"@type":"Question","name":"전용면적과 타입 구성은 어떻게 되나요?","acceptedAnswer":{"@type":"Answer","text":"전용 84㎡가 A부터 F까지 6개 타입 1,775세대, 전용 106㎡가 A·B 2개 타입 432세대, 전용 122㎡가 216세대, 전용 180㎡ 펜트하우스가 A·B·C 3개 타입 9세대입니다. 가장 많은 타입은 84㎡A로 888세대입니다."}},
     {"@type":"Question","name":"시공사와 시행사는 어디인가요?","acceptedAnswer":{"@type":"Answer","text":"시공사는 ㈜대우건설이며 사업주체(시행사)는 주식회사 한강시네폴리스개발입니다. 브랜드는 대우건설의 푸르지오입니다."}},
-    {"@type":"Question","name":"분양가는 얼마인가요?","acceptedAnswer":{"@type":"Answer","text":"입주자모집공고 기준 전용 84㎡는 6억 4,300만원부터 7억 7,300만원, 전용 106㎡는 7억 8,000만원부터 9억 5,100만원, 전용 122㎡는 9억 800만원부터 9억 7,900만원, 전용 180㎡ 펜트하우스는 9억 2,200만원부터 9억 9,900만원입니다. 동·층·타입별로 차등 책정되며 발코니 확장비와 추가선택품목은 포함되어 있지 않습니다."}},
+    {"@type":"Question","name":"분양가는 얼마인가요?","acceptedAnswer":{"@type":"Answer","text":"분양가는 동·층·향·타입별로 차등 책정되며, 잔여세대 현황에 따라 달라질 수 있어 홈페이지에는 금액을 게시하지 않습니다. 대표번호 1555-1087 또는 방문예약으로 문의해 주시면 안내해 드립니다. 발코니 확장비와 추가선택품목은 분양가에 포함되지 않습니다."}},
     {"@type":"Question","name":"청약 자격과 규제는 어떻게 되나요?","acceptedAnswer":{"@type":"Answer","text":"김포시는 비규제지역이며 분양가상한제가 적용되는 공공택지입니다. 산업단지에 공급하는 주택이어서 해당 지역에 거주하지 않는 성년자도 전국에서 청약할 수 있습니다. 전매제한은 3년이지만 기간 내 소유권 이전 등기 시 해제되고, 재당첨 제한은 10년, 거주의무기간은 없습니다."}},
     {"@type":"Question","name":"입주는 언제인가요?","acceptedAnswer":{"@type":"Answer","text":"입주 예정 시기는 2031년 1월이며 정확한 입주일자는 추후 통보됩니다. 공정에 따라 변동될 수 있습니다."}},
     {"@type":"Question","name":"커뮤니티 시설에는 무엇이 있나요?","acceptedAnswer":{"@type":"Answer","text":"그리너리라운지라는 이름의 커뮤니티가 들어섭니다. 지상 1층에는 그리너리 카페, 키즈클럽, 시네마룸, 그리너리 스튜디오, 독서실, 멀티룸, 공유오피스, 시니어클럽, 다함께돌봄센터, 게스트하우스 등이 있고, 지하 1~2층에는 실내체육관, GX룸, 필라테스, 피트니스 클럽, 골프클럽, 스크린골프, 사우나, 탁구장, 당구장 등이 있습니다. 조경은 약 5,950㎡ 규모의 중앙광장을 중심으로 바닥분수 광장과 놀이숲이 조성됩니다."}},
@@ -835,7 +836,7 @@ input::placeholder,textarea::placeholder{color:#A4AFAB}
         ※ 본 홈페이지의 평면도·이미지 등은 소비자의 이해를 돕기 위한 것으로 실제와 차이가 날 수 있으며, 전시품목이 포함되어 있습니다.<br>
         ※ 발코니 확장 및 옵션 선택에 따라 배선기구·조명기구·온도조절기 등의 종류, 수량, 위치는 변경될 수 있습니다.<br>
         ※ 대피동선에 따라 세대 내 동호수별로 대피공간과 실외기실 위치가 상이할 수 있으며, 계약 전 반드시 확인하시기 바랍니다.<br>
-        ※ 분양가격은 입주자모집공고 기준 동·층별 최저~최고 금액이며, 발코니 확장비와 추가선택품목은 포함되어 있지 않습니다.
+        ※ 분양가격은 동·층·향별로 차등 책정되며 잔여세대 현황에 따라 달라질 수 있어 금액을 게시하지 않습니다. 대표번호 1555-1087로 문의해 주세요.
       </p>
     </div>
   </section>
@@ -955,25 +956,25 @@ input::placeholder,textarea::placeholder{color:#A4AFAB}
         <p class="tbl-hint">표를 좌우로 밀어서 보실 수 있습니다.</p>
         <div class="tbl-scroll tbl-wide">
           <table>
-            <caption>주택형별 세대수 및 분양가격 (입주자모집공고 기준 · 단위 : 원)</caption>
+            <caption>주택형별 면적 및 세대수 (입주자모집공고 기준)</caption>
             <thead>
-              <tr><th scope="col">주택형</th><th scope="col">전용면적</th><th scope="col">공급면적</th><th scope="col">총 세대수</th><th scope="col">분양가격 (최저 ~ 최고)</th></tr>
+              <tr><th scope="col">주택형</th><th scope="col">전용면적</th><th scope="col">공급면적</th><th scope="col">총 세대수</th><th scope="col">분양가격</th></tr>
             </thead>
             <tbody>
-              <tr><th scope="row">84A</th><td>84.7402㎡</td><td>113.0210㎡</td><td class="t-num">888</td><td class="t-num">644,000,000 ~ 773,000,000</td></tr>
-              <tr><th scope="row">84B</th><td>84.5605㎡</td><td>113.2751㎡</td><td class="t-num">68</td><td class="t-num">680,000,000 ~ 768,000,000</td></tr>
-              <tr><th scope="row">84C</th><td>84.9219㎡</td><td>112.5506㎡</td><td class="t-num">537</td><td class="t-num">655,000,000 ~ 742,000,000</td></tr>
-              <tr><th scope="row">84D</th><td>84.8168㎡</td><td>113.9384㎡</td><td class="t-num">148</td><td class="t-num">670,000,000 ~ 737,000,000</td></tr>
-              <tr><th scope="row">84E</th><td>84.7060㎡</td><td>112.9669㎡</td><td class="t-num">98</td><td class="t-num">643,000,000 ~ 752,000,000</td></tr>
-              <tr><th scope="row">84F</th><td>84.9001㎡</td><td>112.6296㎡</td><td class="t-num">36</td><td class="t-num">676,000,000 ~ 742,000,000</td></tr>
-              <tr><th scope="row">106A</th><td>106.8713㎡</td><td>141.6004㎡</td><td class="t-num">288</td><td class="t-num">780,000,000 ~ 951,000,000</td></tr>
-              <tr><th scope="row">106B</th><td>106.9778㎡</td><td>141.5485㎡</td><td class="t-num">144</td><td class="t-num">780,000,000 ~ 950,000,000</td></tr>
-              <tr><th scope="row">122</th><td>122.7490㎡</td><td>163.0800㎡</td><td class="t-num">216</td><td class="t-num">908,000,000 ~ 979,000,000</td></tr>
-              <tr><th scope="row">180A</th><td>180.2607㎡</td><td>237.3821㎡</td><td class="t-num">4</td><td class="t-num">996,000,000</td></tr>
-              <tr><th scope="row">180B</th><td>180.9387㎡</td><td>238.7052㎡</td><td class="t-num">2</td><td class="t-num">922,000,000</td></tr>
-              <tr><th scope="row">180C</th><td>180.9315㎡</td><td>237.6252㎡</td><td class="t-num">3</td><td class="t-num">999,000,000</td></tr>
+              <tr><th scope="row">84A</th><td>84.7402㎡</td><td>113.0210㎡</td><td class="t-num">888</td><td>문의</td></tr>
+              <tr><th scope="row">84B</th><td>84.5605㎡</td><td>113.2751㎡</td><td class="t-num">68</td><td>문의</td></tr>
+              <tr><th scope="row">84C</th><td>84.9219㎡</td><td>112.5506㎡</td><td class="t-num">537</td><td>문의</td></tr>
+              <tr><th scope="row">84D</th><td>84.8168㎡</td><td>113.9384㎡</td><td class="t-num">148</td><td>문의</td></tr>
+              <tr><th scope="row">84E</th><td>84.7060㎡</td><td>112.9669㎡</td><td class="t-num">98</td><td>문의</td></tr>
+              <tr><th scope="row">84F</th><td>84.9001㎡</td><td>112.6296㎡</td><td class="t-num">36</td><td>문의</td></tr>
+              <tr><th scope="row">106A</th><td>106.8713㎡</td><td>141.6004㎡</td><td class="t-num">288</td><td>문의</td></tr>
+              <tr><th scope="row">106B</th><td>106.9778㎡</td><td>141.5485㎡</td><td class="t-num">144</td><td>문의</td></tr>
+              <tr><th scope="row">122</th><td>122.7490㎡</td><td>163.0800㎡</td><td class="t-num">216</td><td>문의</td></tr>
+              <tr><th scope="row">180A</th><td>180.2607㎡</td><td>237.3821㎡</td><td class="t-num">4</td><td>문의</td></tr>
+              <tr><th scope="row">180B</th><td>180.9387㎡</td><td>238.7052㎡</td><td class="t-num">2</td><td>문의</td></tr>
+              <tr><th scope="row">180C</th><td>180.9315㎡</td><td>237.6252㎡</td><td class="t-num">3</td><td>문의</td></tr>
             </tbody>
-            <tfoot><tr><td>합계</td><td>—</td><td>—</td><td class="t-num">2,432</td><td>동·층·향별 차등 책정</td></tr></tfoot>
+            <tfoot><tr><td>합계</td><td>—</td><td>—</td><td class="t-num">2,432</td><td>문의</td></tr></tfoot>
           </table>
         </div>
       </div>
@@ -982,7 +983,7 @@ input::placeholder,textarea::placeholder{color:#A4AFAB}
         <h3>확인해 주세요</h3>
         <ul>
           <li>본 홈페이지의 내용은 공식 홈페이지와 <b>입주자모집공고문(2026.07.30. 김포시청 주택과 승인)</b>을 기준으로 작성했습니다. 확정 조건은 입주자모집공고를 따릅니다.</li>
-          <li>상기 분양가격에는 <b>발코니 확장 및 추가선택품목(천장형 시스템에어컨, 빌트인 가전 등)이 포함되어 있지 않습니다.</b></li>
+          <li>분양가격은 <b>동·층·향별로 차등 책정</b>되며 잔여세대 현황에 따라 달라질 수 있어 홈페이지에 게시하지 않습니다. 발코니 확장 및 추가선택품목(천장형 시스템에어컨, 빌트인 가전 등)은 분양가에 포함되지 않습니다.</li>
           <li>계약금 10%, 중도금 60%(6회 분할), 잔금 30% 순으로 납부하며, 중도금 납부일자는 건축공정에 따라 변동될 수 있습니다.</li>
           <li>근린생활시설(단지 내 상가)은 별도 분양대상으로 위 공급대상에 포함되어 있지 않습니다.</li>
           <li>청약 자격·일정·당첨자 발표는 <a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">청약홈</a>과 입주자모집공고를 확인해 주세요.</li>
@@ -1011,10 +1012,10 @@ input::placeholder,textarea::placeholder{color:#A4AFAB}
             <dd>시공사는 ㈜대우건설이며 사업주체(시행사)는 주식회사 한강시네폴리스개발입니다.
               브랜드는 대우건설의 푸르지오입니다.</dd></div>
           <div><dt>분양가는 얼마인가요?</dt>
-            <dd>입주자모집공고 기준 전용 84㎡는 6억 4,300만원부터 7억 7,300만원,
-              전용 106㎡는 7억 8,000만원부터 9억 5,100만원, 전용 122㎡는 9억 800만원부터 9억 7,900만원,
-              전용 180㎡ 펜트하우스는 9억 2,200만원부터 9억 9,900만원입니다.
-              동·층·타입별로 차등 책정되며 발코니 확장비와 추가선택품목은 포함되어 있지 않습니다.</dd></div>
+            <dd>분양가는 동·층·향·타입별로 차등 책정되며, 잔여세대 현황에 따라 달라질 수 있어
+              홈페이지에는 금액을 게시하지 않습니다. 대표번호 <a href="tel:1555-1087">1555-1087</a> 또는
+              방문예약으로 문의해 주시면 안내해 드립니다.
+              발코니 확장비와 추가선택품목은 분양가에 포함되지 않습니다.</dd></div>
           <div><dt>청약 자격과 규제는 어떻게 되나요?</dt>
             <dd>김포시는 비규제지역이며 분양가상한제가 적용되는 공공택지입니다.
               산업단지에 공급하는 주택이어서 해당 지역에 거주하지 않는 성년자도 전국에서 청약할 수 있습니다.
@@ -1244,18 +1245,18 @@ input::placeholder,textarea::placeholder{color:#A4AFAB}
 
   /* ══ 평면 데이터 — 입주자모집공고 기준 ══ */
   var UNITS = [
-    {k:'84A', h:3483, n:'84㎡A',  ex:'84.7402', pub:'28.2808', sup:'113.0210', etc:'56.3034', con:'169.3243', hh:'888', price:'6억 4,400만 ~ 7억 7,300만'},
-    {k:'84B', h:3194, n:'84㎡B',  ex:'84.5605', pub:'28.7146', sup:'113.2751', etc:'56.1840', con:'169.4591', hh:'68',  price:'6억 8,000만 ~ 7억 6,800만'},
-    {k:'84C', h:3100, n:'84㎡C',  ex:'84.9219', pub:'27.6287', sup:'112.5506', etc:'56.4241', con:'168.9747', hh:'537', price:'6억 5,500만 ~ 7억 4,200만'},
-    {k:'84D', h:3218, n:'84㎡D',  ex:'84.8168', pub:'29.1216', sup:'113.9384', etc:'56.3543', con:'170.2927', hh:'148', price:'6억 7,000만 ~ 7억 3,700만'},
-    {k:'84E', h:3167, n:'84㎡E',  ex:'84.7060', pub:'28.2609', sup:'112.9669', etc:'56.2807', con:'169.2475', hh:'98',  price:'6억 4,300만 ~ 7억 5,200만'},
-    {k:'84F', h:3192, n:'84㎡F',  ex:'84.9001', pub:'27.7295', sup:'112.6296', etc:'56.4096', con:'169.0392', hh:'36',  price:'6억 7,600만 ~ 7억 4,200만'},
-    {k:'106A', h:4419,n:'106㎡A', ex:'106.8713',pub:'34.7291', sup:'141.6004', etc:'71.0078', con:'212.6082', hh:'288', price:'7억 8,000만 ~ 9억 5,100만'},
-    {k:'106B', h:4177,n:'106㎡B', ex:'106.9778',pub:'34.5707', sup:'141.5485', etc:'71.0786', con:'212.6271', hh:'144', price:'7억 8,000만 ~ 9억 5,000만'},
-    {k:'122', h:4512, n:'122㎡',  ex:'122.7490',pub:'40.3310', sup:'163.0800', etc:'81.5573', con:'244.6373', hh:'216', price:'9억 800만 ~ 9억 7,900만'},
-    {k:'180A', h:3567,n:'180㎡A', ex:'180.2607',pub:'57.1214', sup:'237.3821', etc:'119.7695',con:'357.1516', hh:'4',   price:'9억 9,600만'},
-    {k:'180B', h:3894,n:'180㎡B', ex:'180.9387',pub:'57.7665', sup:'238.7052', etc:'120.2199',con:'358.9251', hh:'2',   price:'9억 2,200만'},
-    {k:'180C', h:4050,n:'180㎡C', ex:'180.9315',pub:'56.6937', sup:'237.6252', etc:'120.2151',con:'357.8403', hh:'3',   price:'9억 9,900만'}
+    {k:'84A', h:3483, n:'84㎡A',  ex:'84.7402', pub:'28.2808', sup:'113.0210', etc:'56.3034', con:'169.3243', hh:'888'},
+    {k:'84B', h:3194, n:'84㎡B',  ex:'84.5605', pub:'28.7146', sup:'113.2751', etc:'56.1840', con:'169.4591', hh:'68'},
+    {k:'84C', h:3100, n:'84㎡C',  ex:'84.9219', pub:'27.6287', sup:'112.5506', etc:'56.4241', con:'168.9747', hh:'537'},
+    {k:'84D', h:3218, n:'84㎡D',  ex:'84.8168', pub:'29.1216', sup:'113.9384', etc:'56.3543', con:'170.2927', hh:'148'},
+    {k:'84E', h:3167, n:'84㎡E',  ex:'84.7060', pub:'28.2609', sup:'112.9669', etc:'56.2807', con:'169.2475', hh:'98'},
+    {k:'84F', h:3192, n:'84㎡F',  ex:'84.9001', pub:'27.7295', sup:'112.6296', etc:'56.4096', con:'169.0392', hh:'36'},
+    {k:'106A', h:4419,n:'106㎡A', ex:'106.8713',pub:'34.7291', sup:'141.6004', etc:'71.0078', con:'212.6082', hh:'288'},
+    {k:'106B', h:4177,n:'106㎡B', ex:'106.9778',pub:'34.5707', sup:'141.5485', etc:'71.0786', con:'212.6271', hh:'144'},
+    {k:'122', h:4512, n:'122㎡',  ex:'122.7490',pub:'40.3310', sup:'163.0800', etc:'81.5573', con:'244.6373', hh:'216'},
+    {k:'180A', h:3567,n:'180㎡A', ex:'180.2607',pub:'57.1214', sup:'237.3821', etc:'119.7695',con:'357.1516', hh:'4'},
+    {k:'180B', h:3894,n:'180㎡B', ex:'180.9387',pub:'57.7665', sup:'238.7052', etc:'120.2199',con:'358.9251', hh:'2'},
+    {k:'180C', h:4050,n:'180㎡C', ex:'180.9315',pub:'56.6937', sup:'237.6252', etc:'120.2151',con:'357.8403', hh:'3'}
   ];
   (function buildUnits(){
     var tabs = $('#unitTabs'), panels = $('#unitPanels');
@@ -1279,7 +1280,8 @@ input::placeholder,textarea::placeholder{color:#A4AFAB}
               '<div><dt>기타공용면적</dt><dd>'+u.etc+'㎡</dd></div>'+
               '<div><dt>계약면적</dt><dd>'+u.con+'㎡</dd></div>'+
             '</dl>'+
-            '<div class="price"><span>분양가격 (층별 차등)</span><b>'+u.price+'</b></div>'+
+            '<div class="price"><span>분양가격 (동·층·향별 차등)</span>'+
+              '<b><a class="price-ask" href="tel:1555-1087">문의 1555-1087</a></b></div>'+
           '</div>'+
         '</div>');
     });
